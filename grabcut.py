@@ -35,7 +35,7 @@ if __name__ == '__main__':
   detector = dlib.get_frontal_face_detector()
   predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
-  img = cv2.imread('images/cropped_blond.jpg')
+  img = cv2.imread('images/cropped_face.jpg')
   image = imutils.resize(img, width=500)
   # mask = np.zeros(image.shape[:2],np.uint8)
   gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -87,7 +87,7 @@ if __name__ == '__main__':
         mask[i,j] = 1
       elif diff > 20 and diff < 30:
         mask[i,j] = 3
-      elif diff > 30 and diff < 40:
+      elif diff > 30 and diff < 60:
         mask[i,j] = 2
       else:
         mask[i,j] = 0
